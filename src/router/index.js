@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import InicioView from '../views/Inicio.vue'
+import InicioView from '@/views/Inicio'
 import CompraView from '@/views/Compra'
 import CarritoView from '@/views/Carrito'
 import FormularioView from '@/views/Formulario'
+import Producto from '@/views/Producto'
 
 const routes = [
 {
-    path: '/',
+    path: '/inicio',
     name: 'InicioView',
     component: InicioView
 },
@@ -27,7 +28,12 @@ const routes = [
     path: '/formulario',
     name: 'FormularioView',
     component: FormularioView
-}
+},
+{
+    path: '/product/:id',
+    name: 'Product',
+    component: Producto
+  }
 
 
 ]

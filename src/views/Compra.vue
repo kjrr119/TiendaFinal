@@ -4,7 +4,7 @@
         <div class="compra">
             <img class="avatar" src="assets/logo.jpg" alt="logo ▲SIGNATURE▲">
             <h1>▲¡MUCHAS GRACIAS POR SU COMPRA!▲</h1>
-            <form action="Inicio.vue">
+            <form action="Inicio">
                 <input class="boton" type="submit" value="Regresar al inicio">
 
             </form>

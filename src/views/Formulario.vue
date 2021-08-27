@@ -2,7 +2,7 @@
      <body>
         <div class="formulario">
             <h1>▲¡Por favor ingrese los datos de compra!▲</h1>
-            <form action="compra.html">
+            <form action="Compra">
                 <label for="nombreS"></label>
                 <input class="datos" id="nombres" name="nombres" type="text" placeholder="nombres"
                 required/> 
@@ -23,7 +23,7 @@
                 required/> 
                 <input class="boton1" type="submit" value="Confirmar compra">
             </form>
-            <form action="principal.html">
+            <form action="Inicio">
                 <input class="boton2" type="submit" value="Regresar al inicio">
             </form>
         </div>
