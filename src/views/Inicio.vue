@@ -109,11 +109,9 @@ export default {
   box-sizing: border-box;
   font-family: 'Times New Roman', Times, serif;
   font-size: 16pt;
-  color:black;
- 
+  color: black;
   
-  
-  
+
 }
 
 .img-carrito .carrito{

@@ -4,11 +4,11 @@
     <h4>{{ product.name }}</h4>
     <p>{{ productPrice }}</p>
 
-    <input type="number" v-model="quantity" disabled>
-    <button v-if="product.limit > quantity" @click="quantity += 1">+</button>
-    <button v-if="quantity > 0" @click="quantity -= 1">-</button>
+    <input class="agregar" type="number" v-model="quantity" disabled>
+    <button class="agregar" v-if="product.limit > quantity" @click="quantity += 1">+</button>
+    <button class="agregar" v-if="quantity > 0" @click="quantity -= 1">-</button>
     <hr>
-    <button @click="addToCart()" :disabled="quantity === 0">Add to cart</button>
+    <button class="agregar" @click="addToCart()" :disabled="quantity === 0">Agregar al carrito</button>
   </div>
 </template>
 
@@ -64,10 +64,19 @@ export default {
   border: 1px solid #2c3e50;
   border-radius: 10px;
   overflow: hidden;
+  background-color:white;
 }
 
 .card img {
   max-width: 100%;
   height: auto;
 }
+
+.agregar{
+  background-color: black;
+  color: whitesmoke;
+  
+}
+
+
 </style>
