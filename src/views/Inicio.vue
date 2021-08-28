@@ -9,6 +9,15 @@
       />
     </section>
   </div>
+  <div class="posicion carrito">
+    <ul>
+      <li class="img-carrito">
+        <img class="carrito" src="../assets/carrito.png" alt="carrito">
+        <div id="carrito">
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -101,9 +110,17 @@ export default {
   font-family: 'Times New Roman', Times, serif;
   font-size: 16pt;
   color:black;
+ 
   
   
   
-  
+}
+
+.img-carrito .carrito{
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 9px;
+  left: calc(100% - 100px);
 }
 </style>
