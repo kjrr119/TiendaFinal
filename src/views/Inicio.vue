@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <h1>Productos</h1>
     <section v-if="products.length > 0" class="products-grid">
       <ProductCard
         v-for="product in products"
@@ -88,6 +87,7 @@ export default {
 </script>
 
 <style>
+
 .products-grid {
   display: flex;
   flex-direction: row;
@@ -98,5 +98,12 @@ export default {
   padding: 40px 10%;
   width: 100%;
   box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16pt;
+  color:black;
+  
+  
+  
+  
 }
 </style>

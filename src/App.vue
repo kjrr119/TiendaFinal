@@ -32,7 +32,7 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 250vh;
   }
 
   .img-logo .logo{
