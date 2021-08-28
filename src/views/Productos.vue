@@ -9,15 +9,6 @@
       />
     </section>
   </div>
-  <div class="posicion carrito">
-    <ul>
-      <li class="img-carrito">
-        <img class="carrito" src="../assets/carrito.png" alt="carrito">
-        <div id="carrito">
-        </div>
-      </li>
-    </ul>
-  </div>
 </template>
 
 <script>

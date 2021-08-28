@@ -5,20 +5,23 @@
     <div class="img-logo">
         <hi><img class="logo" src="./assets/logo.jpg" alt="logo de signature"></hi>
     </div>
-    <div v-if="isAuth" id="nav">
-      <router-link to="/">Inicio</router-link> |
-      <router-link to="/compra">Compra</router-link> |
-      <router-link to="/formulario">Compra</router-link> |
-      <router-link to="/carrito">Compra</router-link> |
-      
 
+    <div id="nav">
+      <router-link to="/">Inicio</router-link> |
+      <router-link to="/productos">Productos</router-link> |
+      <router-link to="/carrito">Carrito</router-link> |
     </div>
+
+    <a href="/carrito">
+      <img class="carrito" src="./assets/carrito.png" alt="carrito">
+    </a>
+
     <router-view/>
 
-    
 </template>
 
 <script>
+
 
 </script>
 
@@ -53,5 +56,25 @@ header{
     align-items: center;
 
 }
+
+.carrito{
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 9px;
+  left: calc(100% - 100px);
+}
+
+#nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 25px;
+  background: #fff;
+  padding: 5px;
+}
+
 
 </style>

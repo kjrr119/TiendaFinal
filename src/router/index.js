@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import InicioView from '@/views/Inicio'
+import ProductosView from '@/views/Productos'
 import CompraView from '@/views/Compra'
 import CarritoView from '@/views/Carrito'
 import FormularioView from '@/views/Formulario'
@@ -7,9 +7,9 @@ import Producto from '@/views/Producto'
 
 const routes = [
 {
-    path: '/inicio',
-    name: 'InicioView',
-    component: InicioView
+    path: '/productos',
+    name: 'ProductosView',
+    component: ProductosView
 },
 
 {
