@@ -8,7 +8,7 @@ import ConsultaView from '@/views/Consulta'
 
 const routes = [
 {
-    path: '/productos',
+    path: '/',
     name: 'ProductosView',
     component: ProductosView
 },

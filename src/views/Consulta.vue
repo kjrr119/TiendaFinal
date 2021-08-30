@@ -2,7 +2,6 @@
 
  <body>
         <div class="compra">
-            <img class="avatar" src="assets/logo.jpg" alt="logo ▲SIGNATURE▲">
             <h1>▲¡Ingrese el codigo de compra!▲</h1>
             <form >
                 <input class="codigo" type="text" value="Ingrese codigo">
@@ -39,15 +38,7 @@ export default {
     padding:10px 30px;
     box-shadow: 7px 17px 37px black;
 }
-.compra .avatar{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    position: absolute;
-    top: -50px;
-    left: calc(50%  - 50px);
 
-}
 .compra h1{
     margin: 0;
     padding: 0 0 20px;

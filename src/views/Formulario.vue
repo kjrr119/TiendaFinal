@@ -23,7 +23,7 @@
                 required/> 
                 <input class="boton1" type="submit" value="Confirmar compra">
             </form>
-            <form action="Inicio">
+            <form action="/">
                 <input class="boton2" type="submit" value="Regresar al inicio">
             </form>
         </div>

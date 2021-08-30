@@ -7,8 +7,7 @@
     </div>
 
     <div id="nav">
-      <router-link to="/">Inicio</router-link> |
-      <router-link to="/productos">Productos</router-link> |
+      <router-link to="/">Productos</router-link> |
       <router-link to="/carrito">Carrito</router-link> |
       <router-link to="/consulta">Consulta</router-link> |
     </div>
@@ -36,7 +35,7 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 250vh;
+  height: 550vh;
   }
 
   .img-logo .logo{
@@ -73,8 +72,9 @@ header{
   justify-content: center;
   margin-top: 20px;
   font-size: 25px;
-  background: #fff;
+  background:whitesmoke;
   padding: 5px;
+  
 }
 
 
