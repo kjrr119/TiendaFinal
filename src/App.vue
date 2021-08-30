@@ -10,6 +10,7 @@
       <router-link to="/">Inicio</router-link> |
       <router-link to="/productos">Productos</router-link> |
       <router-link to="/carrito">Carrito</router-link> |
+      <router-link to="/consulta">Consulta</router-link> |
     </div>
 
     <a href="/carrito">

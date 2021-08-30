@@ -4,12 +4,19 @@ import CompraView from '@/views/Compra'
 import CarritoView from '@/views/Carrito'
 import FormularioView from '@/views/Formulario'
 import Producto from '@/views/Producto'
+import ConsultaView from '@/views/Consulta'
 
 const routes = [
 {
     path: '/productos',
     name: 'ProductosView',
     component: ProductosView
+},
+
+{
+    path: '/consulta',
+    name: 'ConsultaView',
+    component: ConsultaView
 },
 
 {
