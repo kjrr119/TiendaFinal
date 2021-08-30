@@ -1,14 +1,14 @@
 <template>
   <div class="card">
-    <img :src="product.imageSrc" :alt="product.name">
+    <img :src="product.image" :alt="product.name">
     <h4>{{ product.name }}</h4>
     <p>{{ productPrice }}</p>
 
-    <input class="agregar" type="number" v-model="quantity" disabled>
-    <button class="agregar" v-if="product.limit > quantity" @click="quantity += 1">+</button>
-    <button class="agregar" v-if="quantity > 0" @click="quantity -= 1">-</button>
+    <input class="agregar" type="number" v-model="stock" disabled>
+    <button class="agregar" v-if="product.stock > stock" @click="stock += 1">+</button>
+    <button class="agregar" v-if="stock > 0" @click="stock -= 1">-</button>
     <hr>
-    <button class="agregar" @click="addToCart()" :disabled="quantity === 0">Agregar al carrito</button>
+    <button class="agregar" @click="addToCart()" :disabled="stock === 0">Agregar al carrito</button>
   </div>
 </template>
 
@@ -26,12 +26,12 @@ export default {
 
   data () {
     return {
-      quantity: 0
+      stock: 0
     }
   },
 
   created() {
-    console.log(this.product)
+    //console.log(this.product)
   },
 
   computed: {
@@ -43,11 +43,10 @@ export default {
   methods: {
     addToCart() {
       this.$emit('add', {
-        quantity: this.quantity,
+        stock: this.stock,
         id: this.product.id,
-        total: this.quantity * this.product.price
+        total: this.stock * this.product.price
       })
-      this.quantity = 0
     }
   }
 }

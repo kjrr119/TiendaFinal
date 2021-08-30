@@ -1,0 +1,15 @@
+{
+  "name": "API Gateway Tienda",
+  "schemaPath": "src/graphql/schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "https://api-gateway-narsell.herokuapp.com/",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}

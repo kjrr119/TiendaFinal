@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <section v-if="products.length > 0" class="products-grid">
+    <section v-if="itemList.length > 0" class="products-grid">
       <ProductCard
-        v-for="product in products"
+        v-for="product in itemList"
         :key="product.id"
         :product="product"
         @add="addToCart($event)"
@@ -14,6 +14,8 @@
 <script>
 // @ is an alias to /src
 import ProductCard from '@/components/ProductoT'
+import gql from "graphql-tag";
+
 export default {
   name: 'InicioView',
 
@@ -21,66 +23,43 @@ export default {
 
   data () {
     return {
-      products: [
-        {
-          id: 'fasdfasdf',
-          name: 'Producto 1',
-          price: 25000,
-          imageSrc: 'https://i.imgur.com/6MuObMP.jpg',
-          limit: 40
-        },
-        {
-          id: 't34t4rgr',
-          name: 'Producto 2',
-          price: 75000,
-          imageSrc: 'https://i.imgur.com/6MuObMP.jpg',
-          limit: 4
-        },
-        {
-          id: 'jghj67jg',
-          name: 'Producto 3',
-          price: 215000,
-          imageSrc: 'https://i.imgur.com/6MuObMP.jpg',
-          limit: 10
-        },
-        {
-          id: '65thfghfgh',
-          name: 'Producto 4',
-          price: 15000,
-          imageSrc: 'https://i.imgur.com/6MuObMP.jpg',
-          limit: 20
-        },
-        {
-          id: 'lkd45t4oi5',
-          name: 'Producto 5',
-          price: 5000,
-          imageSrc: 'https://i.imgur.com/6MuObMP.jpg',
-          limit: 3
-        },
-        {
-          id: 'gsdfigsoij43',
-          name: 'Producto 6',
-          price: 35000,
-          imageSrc: 'https://i.imgur.com/6MuObMP.jpg',
-          limit: 8
-        }
-      ],
-      cart: []
+      cart: [],
+      itemList: []
     }
   },
 
   beforeCreate() {
-    console.log(2)
   },
 
   created() {
-    console.log('Hola')
+
+  },
+
+  apollo: {
+    itemList: {
+      query: gql`
+        query {
+          itemList {
+            id
+            name
+            description
+            stock
+            price
+            size
+            image
+          }
+        }
+      `,
+      variables: {
+
+      }
+    }
   },
 
   methods: {
-    addToCart(data) {
-      console.log(data)
+    addToCart(data) { 
       this.cart.push(data)
+      console.log(this.cart)
     }
   }
 }

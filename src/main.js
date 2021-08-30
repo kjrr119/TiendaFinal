@@ -6,7 +6,7 @@ import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core
 import { createApolloProvider } from '@vue/apollo-option'
 
 const httpLink = createHttpLink({
-    uri: 'https://localhost:8080/',
+    uri: 'https://api-gateway-narsell.herokuapp.com/',
 })
 const apolloClient = new ApolloClient({
     link: httpLink,
