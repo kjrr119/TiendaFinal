@@ -9,6 +9,18 @@
                 <label for="apellidos"></label>     
                 <input class="datos" id="apellidos" name="apellidos" type="text" placeholder="apellidos"
                 required/> 
+                <label for="tipodeid">TIPO DE DOCUMENTO: CC:</label>
+                <input id="tipoid" name="tipoid" type="radio" placeholder="tipoid"
+                required/>
+                <label for="tipodeid">T.I:</label>
+                <input id="tipoid" name="tipoid" type="radio" placeholder="tipoid"
+                required/>
+                <label for="tipodeid">NIT:</label>
+                <input id="tipoid" name="tipoid" type="radio" placeholder="tipoid"
+                required/>
+                <label for="identificacion"></label>
+                <input class="datos" id="identificacion" name="identificacion" type="number" placeholder="numero de identificacion"
+                required/>
                 <label for="correo"></label>
                 <input class="datos" id="correo" name="correo" type="email" placeholder="correo"
                 required/>
@@ -40,7 +52,7 @@ export default {
 <style>
 .formulario  {
     width: 450px;
-    height: 600px;
+    height: 650px;
     background-color:black;
     color:whitesmoke;
     top:65%;
@@ -56,7 +68,7 @@ export default {
     background: whitesmoke;
     padding: 10px;
     border-radius: 4px;
-    margin-bottom: 10px;
+    margin-bottom: 4px;
     border: 1px solid #1f53c5;
     font-size: 18px;
 }
