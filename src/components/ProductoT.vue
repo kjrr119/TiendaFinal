@@ -1,6 +1,5 @@
 <template>
-
-
+<div class="col">
   <div class="card" style="width: 19rem;">
     <img :src="product.image" class="card-img-top" :alt="product.name">
     <div class="card-body">
@@ -21,7 +20,7 @@
       <button class="btn btn-primary btn-light" @click="addToCart()" :disabled="quantity === 0">Agregar</button>
     </div>
   </div>
-
+</div>
 </template>
 
 <script>

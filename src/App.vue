@@ -86,4 +86,23 @@ a {
   text-decoration: none;
 }
 
+.container{
+  background-color:rgba(0, 0, 0, 0.884);
+  color:whitesmoke;
+  padding:10px 30px;
+  box-shadow: 7px 17px 37px black;
+  text-align: center;
+}
+
+.container-md {
+    max-width: 700px;
+}
+
+.container-md h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+
+}
+
 </style>

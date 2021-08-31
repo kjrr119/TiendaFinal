@@ -1,13 +1,13 @@
 <template>
-  <div class="home">
-    <section v-if="itemList.length > 0" class="products-grid">
-      <ProductCard
-        v-for="product in itemList"
-        :key="product.id"
-        :product="product"
-        @add="addToCart($event)"
-      />
-    </section>
+  <div class="container container-s">
+    <div class="row row-cols-3" v-if="itemList.length > 0">    
+        <ProductCard
+          v-for="product in itemList"
+          :key="product.id"
+          :product="product"
+          @add="addToCart($event)"
+        />
+    </div>
   </div>
 </template>
 
@@ -66,23 +66,7 @@ export default {
 }
 </script>
 
-<style>
-
-.products-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: stretch;
-  align-content: stretch;
-  padding: 40px 10%;
-  padding-top: 0px;
-  width: 100%;
-  box-sizing: border-box;
-  color: black;
-  
-
-}
+<style scoped>
 
 .img-carrito .carrito{
   width: 70px;
@@ -91,4 +75,13 @@ export default {
   top: 9px;
   left: calc(100% - 100px);
 }
+
+.container-s{
+  background-color:rgba(0, 0, 0, 0.884);
+  color:whitesmoke;
+  padding:10px 30px;
+  box-shadow: 7px 17px 37px black;
+  text-align: center;
+}
+
 </style>

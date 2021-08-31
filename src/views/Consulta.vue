@@ -1,7 +1,7 @@
 <template>
 
  <body>
-        <div class="compra">
+        <div class="container container-md">
             <h1>¡Ingrese el codigo de compra!</h1>
 
             <div class="input-group mb-3">
@@ -10,11 +10,80 @@
             </div>
 
             <section>
-                <table>
-                    <tr>
-                        <th> A </th>
-                    </tr>
+                <table class="table table-dark table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th><h2>Facturación</h2></th>
+                        </tr>
+                    </thead>
                 </table>
+
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Tipo documento</th>
+                                <th>Documento</th>
+                                <th>Celular</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th><h2>Envío</h2></th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Ciudad</th>
+                                <th>Departamento</th>
+                                <th>Dirección</th>
+                                <th>Celular</th>
+                                <th>Email</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th><h2>Productos</h2></th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                    <table class="table table-dark table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nombre del producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio unitario</th>
+                                <th>Precio total</th>
+                                <th> Acciones </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <CartProduct
+   
+                            />
+                        </tbody>
+                    </table>
+
+                    
+
             </section>
 
         </div>
@@ -30,44 +99,8 @@ export default {
 
 
 <style>
-.compra {
-    width: 700px;
-    background-color:black;
-    color:whitesmoke;
-    top:50%;
-    left: 50%;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    padding:10px 30px;
-    box-shadow: 7px 17px 37px black;
-}
 
-.compra h1{
-    margin: 0;
-    padding: 0 0 20px;
-    text-align: center;
 
-}
-.boton{
-    width: 100%;
-    color: black;
-    background:whitesmoke;
-    border: none;
-    padding: 12px;
-    margin: 16px 0;
-    font-size: 18px;
-    
-}
 
-.codigo{
-    width: 100%;
-    color: black;
-    background:whitesmoke;
-    border: none;
-    padding: 12px;
-    margin: 16px -10px;
-    font-size: 18px;
-    
-}
+
 </style>
