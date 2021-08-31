@@ -1,25 +1,30 @@
 <template>
 <body>
     <div class="CarritoCompra">
-        <h1>▲¡Carrito!▲</h1>
+        <h1>¡Carrito!</h1>
         <section v-if="cart.length > 0">
             <form @submit.prevent>
-                <table>
-                    <tr>
-                        <th>Nombre del producto</th>
-                        <th>Cantidad</th>
-                        <th>Precio unitario</th>
-                        <th>Precio total</th>
-                        <th> Acciones </th>
-                    </tr>
-                    <CartProduct
-                        v-for="cartItem in cart"
-                        :key="cartItem.id"
-                        :cartItem="cartItem"
-                        @delete="deleteCartItem($event)"
-                    />
+                <table class="table table-dark table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nombre del producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio unitario</th>
+                            <th>Precio total</th>
+                            <th> Acciones </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <CartProduct
+                            v-for="cartItem in cart"
+                            :key="cartItem.id"
+                            :cartItem="cartItem"
+                            @delete="deleteCartItem($event)"
+                        />
+                    </tbody>
                 </table>
-                <button class="boton" type="submit" @click="PurchaseItems()">Comprar</button>
+                
+                <button class="btn btn-primary btn-success" @click="PurchaseItems()">Comprar</button>
             </form>
         </section>
         
@@ -95,19 +100,5 @@ export default {
     font-size: 18px;
 }
 
-table, th, td {
-  border: 1px solid white;
-  text-align: center;
-  vertical-align: center;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th {
-  height: 70px;
-}
 
 </style>

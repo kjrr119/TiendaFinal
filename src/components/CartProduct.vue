@@ -13,7 +13,9 @@
             $ {{cartItem.totalPrice}}
         </td>
         <td> 
-           <button class='button' @click="deleteCartItem()">Borrar</button> 
+           <button class="btn btn-danger btn-sm" @click="deleteCartItem()">
+                <i class="fas fa-trash"></i>
+           </button>
         </td>
         
     </tr>

@@ -6,11 +6,19 @@
         <img class="logo" src="./assets/logo.jpg" alt="logo de signature">
     </div>
 
-    <div id="nav">
-      <router-link to="/">Productos</router-link> |
-      <router-link to="/carrito">Carrito</router-link> |
-      <router-link to="/consulta">Consulta</router-link> |
-    </div>
+    <nav class="nav nav-pills justify-content-center mx-auto">
+        <router-link to="/">
+           <a class="nav-link active" aria-current="page" href="#">Productos</a>
+        </router-link>
+
+        <router-link to="/carrito">
+          <a class="nav-link active" href="#">Carrito</a>
+        </router-link>
+
+        <router-link to="/consulta">
+          <a class="nav-link active" href="#">Consulta</a>
+        </router-link>  
+    </nav>
 
     <a href="/carrito">
       <img class="carrito" src="./assets/carrito.png" alt="carrito">
@@ -35,7 +43,6 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 550vh;
   }
 
   .img-logo .logo{
@@ -54,7 +61,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    height: 80px;
 }
 
 .carrito{
@@ -65,17 +72,18 @@ header{
   left: calc(100% - 100px);
 }
 
-#nav {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
-  font-size: 25px;
-  background:whitesmoke;
-  padding: 5px;
-  
+.nav {
+  max-width: 600px;  
+  padding: 50px;
 }
 
+.nav-link {
+  margin: 10px;
+  background-color: #000000!important;
+}
+
+a {
+  text-decoration: none;
+}
 
 </style>

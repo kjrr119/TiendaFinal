@@ -24,7 +24,8 @@ export default {
   data () {
     return {
       cart: [],
-      itemList: []
+      itemList: [],
+      cartApp: []
     }
   },
 
@@ -50,15 +51,16 @@ export default {
   },
 
   created(){
-        let cartStr = localStorage.getItem('cart')
-        if(cartStr)
-          this.cart = JSON.parse(cartStr);
+    let cartStr = localStorage.getItem('cart');
+    if(cartStr);
+      this.cart = JSON.parse(cartStr);
   },
 
   methods: {
     addToCart(data) { 
-      this.cart.push(data)
-      localStorage.setItem('cart', JSON.stringify(this.cart))
+      this.cart.push(data);
+      this.cartApp.push(data);
+      localStorage.setItem('cart', JSON.stringify(this.cart));
     }
   }
 }
@@ -74,10 +76,9 @@ export default {
   align-items: stretch;
   align-content: stretch;
   padding: 40px 10%;
+  padding-top: 0px;
   width: 100%;
   box-sizing: border-box;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 16pt;
   color: black;
   
 

@@ -2,16 +2,21 @@
 
  <body>
         <div class="compra">
-            <h1>▲¡Ingrese el codigo de compra!▲</h1>
-            <form >
-                <input class="codigo" type="text" value="Ingrese codigo">
+            <h1>¡Ingrese el codigo de compra!</h1>
 
-            </form>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Código de compra" aria-label="Código de compra" aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
+            </div>
 
-            <form action="">
-                <input class="boton" type="submit" value="Consultar">
+            <section>
+                <table>
+                    <tr>
+                        <th> A </th>
+                    </tr>
+                </table>
+            </section>
 
-            </form>
         </div>
  </body>
     
@@ -26,8 +31,7 @@ export default {
 
 <style>
 .compra {
-    width: 400px;
-    height: 250px;
+    width: 700px;
     background-color:black;
     color:whitesmoke;
     top:50%;

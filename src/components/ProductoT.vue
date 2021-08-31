@@ -1,15 +1,27 @@
 <template>
-  <div class="card">
-    <img :src="product.image" :alt="product.name">
-    <h4>{{ product.name }}</h4>
-    <p>{{ productPrice }}</p>
 
-    <input class="agregar" type="number" v-model="quantity" disabled>
-    <button class="agregar" v-if="product.stock > quantity" @click="quantity += 1">+</button>
-    <button class="agregar" v-if="quantity > 0" @click="quantity -= 1">-</button>
-    <hr>
-    <button class="agregar" @click="addToCart()" :disabled="quantity === 0">Agregar al carrito</button>
+
+  <div class="card" style="width: 19rem;">
+    <img :src="product.image" class="card-img-top" :alt="product.name">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" :value="productPrice">
+        
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="text" v-model="quantity" class="form-control" placeholder="0" aria-label="Items">
+        <button class="btn btn-success btn-sm" :disabled="quantity >=product.stock" @click="quantity += 1">+</button>
+        <button class="btn btn-danger btn-sm" :disabled="quantity < 1" @click="quantity -= 1">-</button>
+      </div>
+      <hr>
+      <button class="btn btn-primary btn-light" @click="addToCart()" :disabled="quantity === 0">Agregar</button>
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -55,28 +67,15 @@ export default {
 </script>
 
 <style scoped>
-.card:nth-child(3n + 2) {
-  margin: 0 5% 10%;
-}
 
 .card {
-  width: calc(30% - 2px);
-  margin-bottom: 10%;
-  border: 1px solid #2c3e50;
-  border-radius: 10px;
-  overflow: hidden;
-  background-color:white;
-}
-
-.card img {
-  max-width: 100%;
-  height: auto;
-}
-
-.agregar{
+  margin: 10px;
+  color: white;
   background-color: black;
-  color: whitesmoke;
 }
 
+.card-title{
+  min-height: 50px;
+}
 
 </style>
