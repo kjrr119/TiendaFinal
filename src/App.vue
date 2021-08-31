@@ -3,7 +3,7 @@
         <h1>▲SIGNATURE▲</h1>
     </header>
     <div class="img-logo">
-        <hi><img class="logo" src="./assets/logo.jpg" alt="logo de signature"></hi>
+        <img class="logo" src="./assets/logo.jpg" alt="logo de signature">
     </div>
 
     <div id="nav">

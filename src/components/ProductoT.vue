@@ -4,11 +4,11 @@
     <h4>{{ product.name }}</h4>
     <p>{{ productPrice }}</p>
 
-    <input class="agregar" type="number" v-model="stock" disabled>
-    <button class="agregar" v-if="product.stock > stock" @click="stock += 1">+</button>
-    <button class="agregar" v-if="stock > 0" @click="stock -= 1">-</button>
+    <input class="agregar" type="number" v-model="quantity" disabled>
+    <button class="agregar" v-if="product.stock > quantity" @click="quantity += 1">+</button>
+    <button class="agregar" v-if="quantity > 0" @click="quantity -= 1">-</button>
     <hr>
-    <button class="agregar" @click="addToCart()" :disabled="stock === 0">Agregar al carrito</button>
+    <button class="agregar" @click="addToCart()" :disabled="quantity === 0">Agregar al carrito</button>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
 
   data () {
     return {
-      stock: 0
+      quantity: 0
     }
   },
 
@@ -43,9 +43,11 @@ export default {
   methods: {
     addToCart() {
       this.$emit('add', {
-        stock: this.stock,
         id: this.product.id,
-        total: this.stock * this.product.price
+        name: this.product.name,
+        quantity: this.quantity,
+        unitPrice: this.product.price,
+        totalPrice: this.quantity * this.product.price
       })
     }
   }
@@ -74,7 +76,6 @@ export default {
 .agregar{
   background-color: black;
   color: whitesmoke;
-  
 }
 
 

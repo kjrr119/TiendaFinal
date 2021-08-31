@@ -1,23 +1,64 @@
 <template>
 <body>
-        <div class="CarritoCompra">
-            <h1>▲¡Carrito!▲</h1>
-            <form action="Formulario">
-                <input class="boton" type="submit" value="Comprar">
-
+    <div class="CarritoCompra">
+        <h1>▲¡Carrito!▲</h1>
+        <section v-if="cart.length > 0">
+            <form @submit.prevent>
+                <table>
+                    <tr>
+                        <th>Nombre del producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio unitario</th>
+                        <th>Precio total</th>
+                        <th> Acciones </th>
+                    </tr>
+                    <CartProduct
+                        v-for="cartItem in cart"
+                        :key="cartItem.id"
+                        :cartItem="cartItem"
+                        @delete="deleteCartItem($event)"
+                    />
+                </table>
+                <button class="boton" type="submit" @click="PurchaseItems()">Comprar</button>
             </form>
-        </div>
+        </section>
+        
+    </div>
  </body>
     
 </template>
 
-
-
-
-
 <script>
+
+import CartProduct from '@/components/CartProduct'
+
 export default {
-    name: 'CarritoView'
+    name: 'CarritoView',
+
+    components: { CartProduct },
+
+    created(){
+        let cartStr = localStorage.getItem('cart')
+        this.cart = JSON.parse(cartStr);
+    },
+
+    data () {
+
+    },
+
+    methods: {
+        deleteCartItem(data) {
+            console.log(data.item);
+            const index = this.cart.indexOf(data.item);
+            if(index > -1)
+                this.cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(this.cart));
+                this.$router.go();
+        },
+        PurchaseItems() {
+            console.log(this.cart)
+        }
+    }
 }
 </script>
 
@@ -26,7 +67,6 @@ export default {
 <style>
 .CarritoCompra {
     width: 700px;
-    height: 400px;
     background-color:black;
     color:whitesmoke;
     top: 60%;
@@ -36,6 +76,7 @@ export default {
     box-sizing: border-box;
     padding:10px 30px;
     box-shadow: 7px 17px 37px black;
+    text-align: center;
 }
 
 .compra h1{
@@ -52,6 +93,21 @@ export default {
     padding: 12px;
     margin: 16px 0;
     font-size: 18px;
-    
 }
+
+table, th, td {
+  border: 1px solid white;
+  text-align: center;
+  vertical-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+  height: 70px;
+}
+
 </style>

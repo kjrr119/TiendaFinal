@@ -28,13 +28,6 @@ export default {
     }
   },
 
-  beforeCreate() {
-  },
-
-  created() {
-
-  },
-
   apollo: {
     itemList: {
       query: gql`
@@ -56,10 +49,16 @@ export default {
     }
   },
 
+  created(){
+        let cartStr = localStorage.getItem('cart')
+        if(cartStr)
+          this.cart = JSON.parse(cartStr);
+  },
+
   methods: {
     addToCart(data) { 
       this.cart.push(data)
-      console.log(this.cart)
+      localStorage.setItem('cart', JSON.stringify(this.cart))
     }
   }
 }
