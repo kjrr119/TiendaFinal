@@ -3,7 +3,7 @@
     <div class="container container-md">
         <h1>¡Carrito!</h1>
         <hr>
-        <section v-if="cart.length > 0">
+        <form @submit.prevent v-if="cart.length > 0">
 
             <table class="table table-dark table-striped table-hover">
                 <thead>
@@ -12,21 +12,24 @@
                         <th>Cantidad</th>
                         <th>Precio unitario</th>
                         <th>Precio total</th>
-                        <th> Acciones </th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <CartProduct
                         v-for="cartItem in cart"
-                        :key="cartItem.id"
+                        :key="cartItem.productoId"
                         :cartItem="cartItem"
                         @delete="deleteCartItem($event)"
                     />
                 </tbody>
             </table>
-            
+            <hr>
             <button class="btn btn-primary btn-success" @click="PurchaseItems()">Comprar</button>
 
+        </form>
+        <section v-else>
+            No tienes productos en tu carrito
         </section>
         
     </div>
@@ -44,12 +47,16 @@ export default {
     components: { CartProduct },
 
     created(){
-        let cartStr = localStorage.getItem('cart')
-        this.cart = JSON.parse(cartStr);
+        if(localStorage.getItem('cart')){
+            this.cart = JSON.parse(localStorage.getItem('cart'));
+        } else {
+            this.cart = []
+        }
     },
 
     data () {
-
+        return {
+        }
     },
 
     methods: {
@@ -62,7 +69,7 @@ export default {
                 this.$router.go();
         },
         PurchaseItems() {
-            console.log(this.cart)
+            this.$router.push({ name: 'FormularioView' })
         }
     }
 }

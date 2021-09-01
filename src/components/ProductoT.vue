@@ -12,7 +12,7 @@
       </div>
 
       <div class="input-group mb-3">
-        <input type="text" v-model="quantity" class="form-control" placeholder="0" aria-label="Items">
+        <input type="text" disabled v-model="quantity" class="form-control" placeholder="0" aria-label="Items">
         <button class="btn btn-success btn-sm" :disabled="quantity >=product.stock" @click="quantity += 1">+</button>
         <button class="btn btn-danger btn-sm" :disabled="quantity < 1" @click="quantity -= 1">-</button>
       </div>
@@ -53,12 +53,13 @@ export default {
   methods: {
     addToCart() {
       this.$emit('add', {
-        id: this.product.id,
-        name: this.product.name,
-        quantity: this.quantity,
-        unitPrice: this.product.price,
-        totalPrice: this.quantity * this.product.price
+        productoId: this.product.id,
+        productoNombre: this.product.name,
+        productoCantidad: this.quantity,
+        productoPrecioUnitario: this.product.price,
+        productoPrecioTotal: this.quantity * this.product.price
       })
+      this.quantity = 0;
     }
   }
 }

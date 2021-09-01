@@ -1,18 +1,20 @@
 <template>
 
  <body>
-        <div class="container container-md">
-            <img class="avatar" src="assets/logo.jpg" alt="logo SIGNATURE">
+        <div class="container container-md" v-if="infoCompra">
             <h1>¡MUCHAS GRACIAS POR SU COMPRA!</h1>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">
+            <hr>
+                Por favor copie el identificador de su compra para hacer el seguido de su pedido
+            <hr>
+            <div class="input-group mb-3 purchase-id">
+                <span class="input-group-text">
                     <i class="fas fa-fingerprint"></i>
                 </span>
-                <input type="text" class="form-control" disabled aria-label="Username" aria-describedby="basic-addon1" :value="GetPurchaseId">
+                <input type="text" class="form-control" disabled aria-label="ID" aria-describedby="basic-addon1" :value="GetPurchaseId">
             </div>
-
+            <hr>
             <form action="/">
-                <button class="btn btn-primary btn-success"> Regresar </button>
+                <button class="btn btn-primary btn-success">Regresar</button>
             </form>
         </div>
  </body>
@@ -24,14 +26,21 @@ export default {
     name: "CompraView",
     data () {
         return {
-            idCompra: 1
+            infoCompra: null
         }
     },
-     computed: {
-         GetPurchaseId() {
-             return "00" + this.idCompra;
-         }
-     }
+    created () {
+        this.infoCompra = JSON.parse(localStorage.getItem('infoCompra'));
+        if(!this.infoCompra){
+            this.$router.push({ name: 'ProductosView' })
+        }
+    },
+    computed: {
+        GetPurchaseId(){
+            return this.infoCompra.id
+        }    
+    }
+
 }
 </script>
 
@@ -47,6 +56,10 @@ export default {
     left: calc(50%  - 50px);
 }
 
+.purchase-id {
+    max-width: 200px;
+    margin: auto;
+}
 
 </style>
 

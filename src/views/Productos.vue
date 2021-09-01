@@ -52,9 +52,11 @@ export default {
   },
 
   created(){
-    let cartStr = localStorage.getItem('cart');
-    if(cartStr);
-      this.cart = JSON.parse(cartStr);
+    if(localStorage.getItem('cart')){
+      this.cart = JSON.parse(localStorage.getItem('cart'));
+    } else {
+      this.cart = []
+    }
   },
 
   methods: {

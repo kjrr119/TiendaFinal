@@ -176,15 +176,16 @@ export default {
                 alert('Información de compra no existe')
                 this.purchaseDetails = {}
             })
-        }
+        },
+
     },
     computed: {
         estadoEnvio(){
             let entregado = this.purchaseDetails.informacionEnvio.fechaEntrega;
             if(entregado)
-                return '<i class="fas fa-box-open"></i>'
+                return '<i class="fas fa-box-open" title="Entregado" style="color: #198754 "></i>'
             else
-                return "<i class='fas fa-truck-loading'></i>"
+                return '<i class="fas fa-truck-loading" title="En tránsito" style="color: #ffc107"></i>'
         },
 
         tipoDeDocumento() {

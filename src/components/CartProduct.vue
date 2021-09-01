@@ -1,16 +1,16 @@
 <template>
     <tr>
         <td>
-            {{cartItem.name}}
+            {{cartItem.productoNombre}}
         </td>
         <td>
-            {{cartItem.quantity}}
+            {{cartItem.productoCantidad}}
         </td>
         <td>
-            $ {{cartItem.unitPrice}}
+            $ {{cartItem.productoPrecioUnitario}}
         </td>
         <td>
-            $ {{cartItem.totalPrice}}
+            $ {{cartItem.productoPrecioTotal}}
         </td>
         <td> 
            <button class="btn btn-danger btn-sm" @click="deleteCartItem()">

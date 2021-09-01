@@ -27,6 +27,8 @@
 
     <router-view/>
 
+    <footer></footer>
+
 </template>
 
 <script>
@@ -117,6 +119,14 @@ a {
     padding: 0 0 20px;
     text-align: center;
 
+}
+
+.table thead{
+  vertical-align: middle;
+}
+
+footer {
+  height: 100px;
 }
 
 </style>
