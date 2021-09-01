@@ -2,6 +2,7 @@
 <body>
     <div class="container container-md">
         <h1>¡Carrito!</h1>
+        <hr>
         <section v-if="cart.length > 0">
 
             <table class="table table-dark table-striped table-hover">

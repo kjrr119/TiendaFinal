@@ -1,5 +1,7 @@
 <template>
   <div class="container container-s">
+    <h1>¡Nuestra selección!</h1>
+    <hr>
     <div class="row row-cols-3" v-if="itemList.length > 0">    
         <ProductCard
           v-for="product in itemList"
@@ -25,7 +27,6 @@ export default {
     return {
       cart: [],
       itemList: [],
-      cartApp: []
     }
   },
 
@@ -59,7 +60,6 @@ export default {
   methods: {
     addToCart(data) { 
       this.cart.push(data);
-      this.cartApp.push(data);
       localStorage.setItem('cart', JSON.stringify(this.cart));
     }
   }

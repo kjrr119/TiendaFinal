@@ -7,7 +7,7 @@
 
       <div class="input-group mb-3">
         <span class="input-group-text">$</span>
-        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" :value="productPrice">
+        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" disabled :value="productPrice">
         
       </div>
 
@@ -42,7 +42,6 @@ export default {
   },
 
   created() {
-    //console.log(this.product)
   },
 
   computed: {

@@ -1,6 +1,6 @@
 <template>
     <header>   
-        <h1>▲SIGNATURE▲</h1>
+        <h1>SIGNATURE</h1>
     </header>
     <div class="img-logo">
         <img class="logo" src="./assets/logo.jpg" alt="logo de signature">
@@ -21,6 +21,7 @@
     </nav>
 
     <a href="/carrito">
+      <label v-if="cartNumber"> <h2>{{cartNumber}} </h2> </label>
       <img class="carrito" src="./assets/carrito.png" alt="carrito">
     </a>
 
@@ -30,6 +31,19 @@
 
 <script>
 
+export default {
+  name: "App",
+
+  data () {
+    return {
+      cartNumber: null
+    }
+  },
+
+  created() {
+
+  }
+}
 
 </script>
 
